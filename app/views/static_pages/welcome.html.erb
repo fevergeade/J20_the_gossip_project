@@ -1,0 +1,18 @@
+<h1>Mon super site de gossip</h1>
+
+<p>Bienvenue, voici les gossips </p>
+
+<main class="container">
+<% @gossips.each.with_index do |gossip, index| %>
+  <div class="card">
+    <div class="card-header"> c'est le potin n° <%= gossip.id %> </div>
+    <div class="card-body">
+      <blockquote class="blockquote mb-0">
+        <%= link_to "#{gossip.title}", gossip_path(gossip.id) %><br/>
+        <footer class="blockquote-footer">created by :<%= link_to "#{gossip.user.first_name} #{gossip.user.last_name}", user_path(gossip.user.id) %></footer>
+      </blockquote>
+    </div>
+  </div>
+<% end %>
+<div style="margin-top: 20px;"><%= link_to "Retour Accueil", root_path, :class => "btn btn-info" %></div>
+</main>
