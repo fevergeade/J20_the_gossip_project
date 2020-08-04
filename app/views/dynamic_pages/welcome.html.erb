@@ -17,6 +17,6 @@
     </div>
   <%end%>
 <% end %>
-<div style="margin-top: 20px;"><%= link_to "information user", user_path(gossip.user.id), :class => "btn btn-info" %></div>
+<div style="margin-top: 20px;"><%= link_to "information user", user_path(@gossips[1].user.id), :class => "btn btn-info" %></div>
 <div style="margin-top: 20px;"><%= link_to "Retour Accueil", root_path, :class => "btn btn-info" %></div>
 </main>
